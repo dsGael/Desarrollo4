@@ -47,3 +47,20 @@ for i in range(0,10):
 
 print(A)  
 print(B)
+
+print(" ------------------------")
+A=[i for i in range(0,10)]
+B=[i for i in range(0,10) if i%2==0]
+
+print(f"A:{A}")
+print(f"B:{B}")
+print(" \n------------------------")
+squares = [i**2 for i in range(0,10)]
+
+print(f"Squares: {squares}")
+
+pi=3.141592653589793
+print(f"pi: {pi:.2f}")
+
+print(" \n------------------------")
+
