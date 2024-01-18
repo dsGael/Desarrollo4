@@ -16,7 +16,7 @@ print(facultad['Minas']['IMM'])
 print("\n----------------------")
 if 'civil' in facultad:
     print(facultad['civil'])
-else:
+else:  
     print('No existe la carrera de civil')
 
 try:
