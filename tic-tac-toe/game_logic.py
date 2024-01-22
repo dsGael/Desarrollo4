@@ -18,26 +18,56 @@ print(f"tab_dict: {tab_dict}")
 def IA(board:dict):
     ocuppied = True
     while ocuppied==True:
-        r=random.choices(board.keys())
+        r=random.choice(list(board.keys()))
         if board[r] == str(r):
             ocuppied=False
             board[r]="O"
 
 
+def juega_usuario(tab):
+    turno_correcto=False
+    usuario= input("Escoja celda:\n")
+    usuario=int(usuario)
+    if usuario in tab:
+        if tab[usuario]== str(usuario):
+            tab[usuario]="X"
+            turno_correcto=True
+        else:
+            print(f"Casilla {usuario} Ocupada \nElija otra opción\n")
+    return turno_correcto
+
+
 
 def game(tab:dict):
-    while True:
+    turnos=0
+    while turnos <9:
         display_tablero(tab)
-        usuario=int( input("Selecciona una celda:\n"))
-
-        if usuario in tab:
-            if tab[usuario]== str(usuario):
-                tab[usuario]="X"
-            else:
-                print("Casilla Ocupada \nElija otra opción\n")
-              
-
-
+        correcto=juega_usuario(tab)
+        if correcto:
+            turnos+=1
+            gana=win(tab)
+            if gana:
+                display_tablero(tab)
+                print("Ganaste!")
+                break
+            IA(tab)  
+            gana=win(tab)
+            if gana:
+                display_tablero(tab)
+                print("Gana IA")
+                break
+            
+            turnos+=1
+    if not win(tab):
+        display_tablero(tab)
+        print("Empate")
         
+
+def win(tab):
+    lista_lineas=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+    for comb in lista_lineas:
+        if tab[comb[0]]==tab[comb[1]]==tab[comb[2]]:
+            return True
+    return False
 
 game(tab_dict)
