@@ -40,34 +40,54 @@ def juega_usuario(tab):
 
 def game(tab:dict):
     turnos=0
+    diccionario={'ganador':''}
+    
     while turnos <9:
         display_tablero(tab)
         correcto=juega_usuario(tab)
         if correcto:
             turnos+=1
             gana=win(tab)
+        
             if gana:
+                diccionario["ganador"]="Jugador :)"
                 display_tablero(tab)
                 print("Ganaste!")
+                
                 break
             IA(tab)  
             gana=win(tab)
+        
+
             if gana:
+                diccionario["ganador"]="IA :("
                 display_tablero(tab)
                 print("Gana IA")
+                
                 break
+                
             
-            turnos+=1
-    if not win(tab):
-        display_tablero(tab)
-        print("Empate")
+            turnos+=1          
+
+    return diccionario
         
 
 def win(tab):
+
     lista_lineas=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
     for comb in lista_lineas:
         if tab[comb[0]]==tab[comb[1]]==tab[comb[2]]:
             return True
     return False
 
-game(tab_dict)
+
+
+
+
+if __name__ == "__main__":
+    d=game(tab_dict)
+    
+    if d['ganador']!="":
+        print(f"Ganador: {d['ganador']}")
+    else:
+        print("Empate")
