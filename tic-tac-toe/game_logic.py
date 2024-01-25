@@ -51,7 +51,7 @@ def game(tab:dict):
             gana=win(tab)
         
             if gana:
-                diccionario["ganador"]="Jugador :)"
+                diccionario["ganador"]="Jugador"
                 display_tablero(tab)
                 print("Ganaste!")
                 
@@ -61,7 +61,7 @@ def game(tab:dict):
         
 
             if gana:
-                diccionario["ganador"]="IA :("
+                diccionario["ganador"]="IA"
                 display_tablero(tab)
                 print("Gana IA")
                 
@@ -84,15 +84,10 @@ def win(tab):
 
 def game_cycle(tab):
     
-
     d=game(tab)
     if d['ganador']!="":
         print(f"Ganador: {d['ganador']}")
-        if d['ganador']=="Jugador :)":
-            score['Jugador']+=1
-        elif d['ganador']=="IA :(":
-            score['IA']+=1
-        
+        score[d['ganador']]+=1   
     else:
         print("Empate")
         score['Empates']+=1
@@ -104,9 +99,12 @@ if __name__ == "__main__":
     continuar=True
     score={"Jugador":0,"IA":0, "Empates":0}
     while continuar:
+
         tab=reset_tablero()
-        print("TIC TAC TOE")
+        print("TIC TAC TOE\n")
+
         game_cycle(tab)
+
         print("¿Otra partida?")
         print("1 >> Si")
         print("2 >> No")
@@ -114,4 +112,4 @@ if __name__ == "__main__":
         if opcion!="1":
             continuar=False
             print("bai bai")
-            
+                
