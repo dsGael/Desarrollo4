@@ -2,8 +2,11 @@ import random
 '''
 logica del programa del gato
 '''
-tablero=[x for x in range(0,9)]
-tab_dict={x:str(x) for x in range(0,9)}
+def reset_tablero():
+    tablero=[x for x in range(0,9)]
+    tab_dict={x:str(x) for x in range(0,9)}
+    return tab_dict
+
 
 def display_tablero(tab:dict):
     print(f"{tab[0]} | {tab[1]} | {tab[2]}")
@@ -12,8 +15,6 @@ def display_tablero(tab:dict):
     print("--+---+---")
     print(f"{tab[6]} | {tab[7]} | {tab[8]}")        
 
-print(f"tablero: {tablero}")
-print(f"tab_dict: {tab_dict}")
 
 def IA(board:dict):
     ocuppied = True
@@ -81,13 +82,36 @@ def win(tab):
     return False
 
 
-
-
-
-if __name__ == "__main__":
-    d=game(tab_dict)
+def game_cycle(tab):
     
+
+    d=game(tab)
     if d['ganador']!="":
         print(f"Ganador: {d['ganador']}")
+        if d['ganador']=="Jugador :)":
+            score['Jugador']+=1
+        elif d['ganador']=="IA :(":
+            score['IA']+=1
+        
     else:
         print("Empate")
+        score['Empates']+=1
+    print(f"Marcador: {score}")
+        
+
+if __name__ == "__main__":
+    opcion=1
+    continuar=True
+    score={"Jugador":0,"IA":0, "Empates":0}
+    while continuar:
+        tab=reset_tablero()
+        print("TIC TAC TOE")
+        game_cycle(tab)
+        print("¿Otra partida?")
+        print("1 >> Si")
+        print("2 >> No")
+        opcion=input()
+        if opcion!="1":
+            continuar=False
+            print("bai bai")
+            
