@@ -10,7 +10,7 @@ def display_tablero(tablero:dict):
     X= x_color+"X"
     O = o_color+"O"
     BD=board_color+"----------"
-    BS=board_color+"|"
+    BS=board_color+" | "
     d={}
     for k,v in tablero.items():
         if v=="X":
