@@ -11,7 +11,7 @@ def reset_tablero():
     return tab_dict
 
 
-def display_tablero(tab:dict):
+#def display_tablero(tab:dict):
     print(f"{tab[0]} | {tab[1]} | {tab[2]}")
     print("--+---+---")
     print(f"{tab[3]} | {tab[4]} | {tab[5]}")
@@ -60,7 +60,7 @@ def game(tab:dict):
             gana=win(tab)
             if gana:
                 diccionario["ganador"]="IA"
-               board.display_tablero(tab)
+                board.display_tablero(tab)
                 print("Gana IA")
                 break              
             turnos+=1          
@@ -82,7 +82,7 @@ def game_cycle():
     score={"Jugador":0,"IA":0, "Empates":0}
     while continuar:
         tab=reset_tablero()
-        print("TIC TAC TOE\n")
+        #print("TIC TAC TOE\n")
         d=game(tab)
         display_score(score,d)
         continuar = play_again()
@@ -105,12 +105,12 @@ def display_score(s:dict,d:dict):
 def play_again():
     continuar=True
     print("¿Otra partida?")
-        print("1 >> Si")
-        print("2 >> No")
-        opcion=input()
-        if opcion!="1":
-            continuar=False
-            print("bai bai")
+    print("1 >> Si")
+    print("2 >> No")
+    opcion=input()
+    if opcion!="1":
+        continuar=False
+        print("bai bai")
     return continuar
 
 if __name__ == "__main__":
