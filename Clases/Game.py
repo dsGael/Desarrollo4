@@ -12,7 +12,7 @@ class Game:
 
     def play(self):
         sports_list=["Baseball","Soccer","Basketball","NFL"]
-        sports_dict={"Baseball": [x for x in range(0,10)],  "Basketball": [x for x in range(90,120)], "NFL": [x for x in range(0,57,7)], "Soccer": [x for x in range(0,6)]}
+        sports_dict={"Baseball": [x for x in range(0,10)],  "Basketball": [x for x in range(80,130)], "NFL": [x for x in range(0,57,7)], "Soccer": [x for x in range(0,6)]}
                         
         for s in sports_list:
             if self.A.sport.name == s and self.B.sport.name == s:
