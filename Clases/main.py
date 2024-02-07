@@ -40,8 +40,7 @@ def procesa_diccionario(diccionario:dict):
 def main():
     with open("torneo_soccer.json","r", encoding="utf8") as archivo:
       json_leido=json.load(archivo)
-    print(f"tipo:{type(json_leido)}")
-    print(json_leido)
+    procesa_diccionario(json_leido)
 
 if __name__ == "__main__":
     main()
