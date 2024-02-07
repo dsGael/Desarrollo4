@@ -17,7 +17,7 @@ class Team:
             print(f" {athlete}")
 
     def to_json(self):
-        return {"name":self.name, "sport":self.sport,
+        return {"name":self.name, "sport":self.sport.to_json(),
                 "players": [p.name for p in self.players]
                 }
 

@@ -17,10 +17,15 @@ class Sport:
                             league='{self.league}')
                         """
         return return_string
-    
+
+    def to_json(self)-> dict:
+        return_string={'name':self.name,'num_players':self.num_players, 'league':self.league}
+
+        return return_string
+
+
 if __name__ == "__main__":
     s = Sport("Soccer",11,"LMX")
-    print(s)
+    
     b = Sport("Beisbol",9,"LMP")
-    print(b)
-    print(repr(b))
+    print (b.to_json())
