@@ -1,30 +1,33 @@
-from Atleta import Athelete
+from Athlete import Athlete
 from Sport import Sport
 
 class Team:
-    def __init__(self, name:str, sport:Sport) -> None:
+    def __init__(self,name:str,sport:Sport) -> None:
         self.name = name
         self.sport = sport
         self.players = []
-
-    def add_player(self, player:Athelete) -> None:
-        self.players.append(player.name)
+    
+    def add_player(self,athlete:Athlete):
+        self.players.append(athlete)
 
     def display(self):
-        print(f"Team: {self.name}")
-        print(f"Sport: {self.sport.name}")
-        print(f"League: {self.sport.league}")
-        print("The team members are:")
+        print(f"Team {self.name}")
+        print(f"{self.sport}")
         for athlete in self.players:
-            print(athlete)
+            print(f" {athlete}")
+
+    def to_json(self):
+        return {"name":self.name, "sport":self.sport,
+                "players": [p.name for p in self.players]
+                }
 
 if __name__ == "__main__":
-    s = Sport("Basketball", 5, "NBA")
-    lakers = Team("Lakers", s)
-    aaron = Athelete('Aaron', 15, 'basketball', 'Lakers')
-    julian = Athelete("Julian", 16, "basketball", "Lakers")
-    emilio = Athelete("Emilio", 17, "basketball", "Lakers")
-    lakers.add_player(aaron)
-    lakers.add_player(julian)
-    lakers.add_player(emilio)
-    lakers.display()
+    a = Athlete("Chicharito")
+    b = Athlete("Piojo Alvarado")
+    s = Sport("Soccer","11","LMX")
+    t = Team("Chivas de Guadalajara",s)
+    t.add_player(a)
+    t.add_player(b)
+    t.display()
+    print(t.to_json())
+        
