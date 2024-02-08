@@ -9,7 +9,7 @@ class Athlete:
         return f"{self.name}"
     
     def __repr__(self) -> str:
-        return f"Athlete(name='{self.name}')"
+        return f"('{self.name}')"
     
 if __name__ == "__main__":
     a = Athlete("Ana G.")

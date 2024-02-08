@@ -31,16 +31,35 @@ def main0():
     with open("torneo_soccer.json","w", encoding="utf8") as archivo:
         archivo.write(str(torneo))
 
-def procesa_diccionario(diccionario:dict):
+def procesa_diccionario(diccionario:dict) -> dict:
+    diccionario_equipos = {}
     for k1,v1 in diccionario.items():
-        print(f"key:{k1}")
         for k2,v2 in v1.items():
-            print(f"key:{k2}")
+            if(k2=="players"):
+                lista_atleta=[Athlete(x) for x in v2]
+             
+            if(k2=="sport"):
+                s=Sport(v2['name'],v2['num_players'],v2['league'])
+                
+            if(k2=="name"):
+                nombre_eq=v2
+                
+
+        equipo=Team(nombre_eq,s)
+        for a in lista_atleta:
+            equipo.add_player(a)
+        diccionario_equipos[k1]=equipo
+    return diccionario_equipos
+
 
 def main():
     with open("torneo_soccer.json","r", encoding="utf8") as archivo:
       json_leido=json.load(archivo)
-    procesa_diccionario(json_leido)
+    equipos=procesa_diccionario(json_leido)
+    for equipo in equipos.items():
+        print(equipo)
+        print()
+
 
 if __name__ == "__main__":
     main()
