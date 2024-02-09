@@ -56,9 +56,42 @@ def main():
     with open("torneo_soccer.json","r", encoding="utf8") as archivo:
       json_leido=json.load(archivo)
     equipos=procesa_diccionario(json_leido)
-    for equipo in equipos.items():
-        print(equipo)
-        print()
+    #for equipo in equipos.items():
+     #   print(equipo)
+    lista_equipos= [k for k in equipos.keys()]
+   
+    lista_juegos=[]
+
+    print("Partidos")
+
+    while len(lista_equipos)>=2:
+        equipoLocal=lista_equipos.pop(0)
+        eqC=equipos[equipoLocal] #eq c = equipo Casa
+       
+        for eqVisitante in lista_equipos:
+            eqV=equipos[eqVisitante]
+            game=Game(eqC,eqV)
+            
+            lista_juegos.append(game)
+    diccionario_score={k:{"G":0,"P":0,"E":0} for k in equipos.keys()}
+    for juego in lista_juegos:
+        c=juego.A.name # c de casa
+        v=juego.B.name # v de visitante
+        sc=juego.score[c]
+        print(sc)
+        sv=juego.score[v]
+        print(sv)
+        if(sc>sv):
+            diccionario_score[c]["G"]+=1
+            diccionario_score[v]["P"]+=1
+        elif(sc<sv):
+            diccionario_score[c]["P"]+=1
+            diccionario_score[v]["G"]+=1
+        elif(sc==sv):
+            diccionario_score[c]["E"]+=1
+            diccionario_score[v]["E"]+=1
+    
+    print(diccionario_score)
 
 
 if __name__ == "__main__":
