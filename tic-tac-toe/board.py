@@ -45,7 +45,7 @@ def display_score(s:dict,d:dict):
 
 def play_again():
     continuar=True
-    print(Cursor.POS(1,20)+"¿Otra partida? \n1 >> Si \n 2 >> No"")
+    print(Cursor.POS(1,20)+"¿Otra partida? \n1 >> Si \n 2 >> No")
     
     opcion=input()
     if opcion!="1":
