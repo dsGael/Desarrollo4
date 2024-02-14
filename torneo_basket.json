@@ -1,0 +1,11 @@
+{
+"Lakers": {"name": "Lakers", "sport": {"name": "Basket", "num_players": 5,"league": "NBA"}, "players": ["Lebron James", "Anthony Davis", "Dwight Howard", "Rajon Rondo", "Kyle Kuzma"]},
+"Clippers": {"name": "Clippers", "sport": {"name": "Basket", "num_players": 5,"league": "NBA"}, "players": ["Kawhi Leonard", "Paul George", "Lou Williams", "Montrezl Harrell", "Patrick Beverley"]},
+"Bulls": {"name": "Bulls", "sport": {"name": "Basket", "num_players": 5,"league": "NBA"}, "players": ["Zach LaVine", "Lauri Markkanen", "Otto Porter Jr.", "Wendell Carter Jr.", "Coby White"]},
+"Warriors": {"name": "Warriors", "sport": {"name": "Basket", "num_players": 5,"league": "NBA"}, "players": ["Stephen Curry", "Klay Thompson", "Draymond Green", "Andrew Wiggins", "Marquese Chriss"]},
+"Rockets": {"name": "Rockets", "sport": {"name": "Basket", "num_players": 5,"league": "NBA"}, "players": ["James Harden", "Russell Westbrook", "Eric Gordon", "Robert Covington", "P.J. Tucker"]},
+"Nuggets": {"name": "Nuggets", "sport": {"name": "Basket", "num_players": 5,"league": "NBA"}, "players": ["Nikola Jokic", "Jamal Murray", "Paul Millsap", "Gary Harris", "Will Barton"]},
+"76ers": {"name": "76ers", "sport": {"name": "Basket", "num_players": 5,"league": "NBA"}, "players": ["Joel Embiid", "Ben Simmons", "Tobias Harris", "Al Horford", "Josh Richardson"]},
+"Raptors": {"name": "Raptors", "sport": {"name": "Basket", "num_players": 5,"league": "NBA"}, "players": ["Pascal Siakam", "Kyle Lowry", "Fred VanVleet", "Serge Ibaka", "Marc Gasol"]}
+
+}
