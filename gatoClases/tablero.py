@@ -37,24 +37,25 @@ class tablero:
             else:
                 d[k]= blue + str(k) + BS
         Cursor.POS(10,5)
-        print(Cursor.POS(20,5)+f"{bg}{BS}{d[0]}{d[1]}{d[2]}{reset}")
-        print(Cursor.POS(20,6)+f"{bg}{BD}{reset}")
-        print(Cursor.POS(20,7)+f"{bg}{BS}{d[3]}{d[4]}{d[5]}{reset}")
-        print(Cursor.POS(20,8)+f"{bg}{BD}{reset}")
-        print(Cursor.POS(20,9)+f"{bg}{BS}{d[6]}{d[7]}{d[8]}{reset}")
+        print(Cursor.POS(20,4)+f"{bg}{BS}{d[0]}{d[1]}{d[2]}{reset}")
+        print(Cursor.POS(20,5)+f"{bg}{BD}{reset}")
+        print(Cursor.POS(20,6)+f"{bg}{BS}{d[3]}{d[4]}{d[5]}{reset}")
+        print(Cursor.POS(20,7)+f"{bg}{BD}{reset}")
+        print(Cursor.POS(20,8)+f"{bg}{BS}{d[6]}{d[7]}{d[8]}{reset}")
         print(Style.RESET_ALL)
 
-    def juega_usuario(self, jugador:Jugador):
+    def juega_usuario(self, jugador1:Jugador):
         turno_correcto=False
         tab=self.dicc_pos
         usuario= input(Cursor.POS(1,12)+"Escoja celda:\n")
         usuario=int(usuario)
         if usuario in tab:
             if tab[usuario]== str(usuario):
-                tab[usuario]=jugador.simbolo
+                tab[usuario]=jugador1.simbolo
                 turno_correcto=True
             else:
                 print(Cursor.POS(1,14)+f"Casilla {usuario} Ocupada \nElija otra opción\n")
+
         return turno_correcto
 
     def reset_tablero(self):
@@ -70,6 +71,6 @@ if __name__ == "__main__":
     t.juega_usuario(j)
     t.juega_usuario(j)
     if t.Checa_win():
-        print(Cursor.POS(1,4)+f"Gana: {j.nombre}")
+        print(Cursor.POS(1,15)+f"Gana: {j.nombre}")
     t.display_tablero()
     
