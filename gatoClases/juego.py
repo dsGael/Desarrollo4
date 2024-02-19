@@ -1,5 +1,6 @@
 from jugador import Jugador
 from tablero import tablero
+import os
 
 class Juego:
     def __init__(self,tablero:tablero,jugador1:Jugador,jugador2:Jugador)-> None:
@@ -13,7 +14,7 @@ class Juego:
             ganador=False
             while mov==False:
                 print(f"Turno de {moviendo.nombre}")
-                mov= self.tablero.juega_usuario(moviendo.nombre)        
+                mov= self.tablero.juega_usuario(moviendo)        
             self.turnos+=1
             self.tablero.display_tablero()
 
