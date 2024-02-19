@@ -14,12 +14,8 @@ def moda(list:list)->float:
     dic={x:0 for x in list}
     for x in list:
         dic[x]+=1
-       
-    maximo=max(dic.values())
-    for x in dic:
-        if dic[x]==maximo:
-            maximo=x
-    return maximo
+    
+    return max(dic,key=lambda key:dic[key])
 
 if __name__=="__main__":
     lista=[x for x in range(1,10)]
