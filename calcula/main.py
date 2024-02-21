@@ -12,6 +12,7 @@ def main(listado:list)->None:
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description="Calcula datos estadisticos de una lista")
     parser.add_argument("enteros", metavar="N", type=int, nargs="+", help="Lista de flotantes")
+    parser.add_argument(dest="o", type=str)
     args=parser.parse_args()
     print(args.enteros)
     main(args.enteros)
