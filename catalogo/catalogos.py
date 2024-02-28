@@ -8,12 +8,17 @@ class Revista:
         self.titulo = titulo
         self.catalogos = set()
         self.catalogos.add(catalogo)
+        self.area=set()
     
     def __str__(self):
-        return f'{self.titulo} - {self.catalogos}'
+        return f'{self.titulo} - {self.catalogos} - {self.area}'
 
     def __repr__(self):
-        return f'{self.titulo} - {self.catalogos}'
+        return f'{self.titulo} - {self.catalogos} - {self.area}'
+    
+    def addArea(self,area:str):
+        self.area.add(area)
+
 
 def read_folder(folder_path:str) -> list:
     return os.listdir(folder_path)
@@ -22,7 +27,7 @@ def extract_left_of_underscore(strings:list) -> list:
     return [string.split("_")[0] for string in strings]
 
 def read_csv(file_path:str) -> list:
-    with open(file_path, newline='', encoding='utf-8') as csvfile:
+    with open(file_path, newline='', encoding='latin1') as csvfile:
         reader = csv.reader(csvfile)
         return [row for row in reader]
 
