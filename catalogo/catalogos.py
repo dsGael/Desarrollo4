@@ -74,8 +74,8 @@ def procesa_areas(folder:str)-> dict:
 def asigna_areas_a_revistas(d_revistas:dict, d_areas:dict):
     for titulo, revista in d_revistas.items():
         for r in revista:
-            if r.titulo in d_areas.keys():
-                areas = d_areas[r.titulo]
+            if r.titulo.upper() in d_areas.keys():
+                areas = d_areas[r.titulo.upper()]
                 #print(f"revista:{type(revista)} : {revista}")
                 r.addArea=(areas[0])
                
