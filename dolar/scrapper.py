@@ -35,34 +35,42 @@ def get_company(dom):
        i=0
        leng=len(row.find_all('td'))
        for col in row.find_all('td'):
-            if leng<4:
+            if leng<5:
                 if i==0:
                     company=col.find(class_="small-hide")
                     company=company.text.strip()
-                    
+                    companies[company]={}
                 if i==3:
                     compra=float(col.text.strip())
-                    print(compra)
                     venta=compra
+                    companies[company]={'Compra':compra,'Venta':venta}
             else:
 
                 if i==0:
                     company=col.find(class_="small-hide")
                     company=company.text.strip()
-                if i==2:
-                    compra=float(col.text.strip())
-                    print(compra)
+                    companies[company]={}
                 if i==3:
+                    compra=float(col.text.strip())
+                    companies[company]={'Compra':compra}
+                if i==4:
                     venta=float(col.text.strip())
+                    companies[company]['Venta']=venta
                     
             i+=1
-            if i==4:
-                companies[company]={'Compra':compra,'Venta':venta}
-     
-        
     return companies
 
+def maximo_Compra(compañias:dict):
+    mayor=0
+    bancoName=''
 
+    for k in compañias:
+        compra=compañias[k]['Compra']
+        if mayor<compra:
+            mayor=compra
+            bancoName=k    
+    d={bancoName:mayor}           
+    return d
 
 def main():
     url='https://bit.ly/dolarInfo'
@@ -72,7 +80,9 @@ def main():
     resultados= soup.find(id="dllsTable")
     #ex=get_exchange_rate(results)
     compañias=get_company(resultados)
-    print(compañias)
+   # print(compañias)
+    menor=maximo_Compra(compañias)
+    print(menor)
 
 
 if __name__ == '__main__':
