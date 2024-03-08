@@ -62,14 +62,43 @@ def get_company(dom):
 
 def maximo_Compra(compañias:dict):
     mayor=0
-    bancoName=''
-
     for k in compañias:
         compra=compañias[k]['Compra']
         if mayor<compra:
             mayor=compra
             bancoName=k    
-    d={bancoName:mayor}           
+    d=compañias[bancoName]           
+    return d
+
+def minimo_Compra(compañias:dict):
+    menor=100
+    for k in compañias:
+        compra=compañias[k]['Compra']
+        if menor>compra:
+            menor=compra
+            bancoName=k    
+    d=compañias[bancoName]           
+    return d
+
+def maximo_Venta(compañias:dict):
+    mayor=0
+    for k in compañias:
+        venta=compañias[k]['Venta']
+        if mayor<venta:
+            mayor=venta
+            bancoName=k    
+    d=compañias[bancoName]           
+    return d
+
+def minimo_Venta(compañias:dict):
+    menor=100
+    
+    for k in compañias:
+        venta=compañias[k]['Venta']
+        if menor>venta:
+            menor=venta
+            bancoName=k    
+    d=compañias[bancoName]          
     return d
 
 def main():
@@ -81,9 +110,15 @@ def main():
     #ex=get_exchange_rate(results)
     compañias=get_company(resultados)
    # print(compañias)
-    menor=maximo_Compra(compañias)
-    print(menor)
-
+    mayorC=maximo_Compra(compañias)
+    menorC=minimo_Compra(compañias)
+    menorV=minimo_Venta(compañias)
+    mayorV=maximo_Venta(compañias)
+    print(f"Mayor Venta:{mayorV}")
+    print(f"Menor Venta:{menorV}")
+    print(f"Mayor Compra:{mayorC}")
+    print(f"Menor Compra:{menorC}")
+    
 
 if __name__ == '__main__':
     main()
