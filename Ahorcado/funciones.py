@@ -8,7 +8,13 @@ def lee_archivo(archivo:str):
             palabras.append(palabra)
     return palabras
 
+def palabra_toList(palabra:str)-> list:
+    lista=[{letra:"_"} for letra in palabra]
+    return lista
+
+
+
 if __name__ == "__main__":
     print(lee_archivo("ahorcado/palabras.txt"))
-
+    print(palabra_toList("papu"))
     

@@ -1,0 +1,10 @@
+{%- macro dropdown(name, items) -%}
+    <select name="{{ name }}" {{extra|safe}}>
+        {%- for ind, val in items -%}
+            <option value="{{ ind }}">{{ val }}</option>
+        {%- endfor -%}
+    </select>
+{%- endmacro -%}
+
+
+
