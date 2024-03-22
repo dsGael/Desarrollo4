@@ -30,10 +30,20 @@ def index():
             if valor in dic: 
                 dic[valor]=valor
                 existe=True
+                image=f"/static/images/monito-{conteo}.png"
         if not existe:
-            conteo=+1 
+            conteo+=1 
+            image=f"/static/images/monito-{conteo}.png"
 
-        image=f"/static/images/monito-{conteo}.png"
+        if conteo>6:
+            conteo=0
+            palabra=random.choice(palabras)
+            palabraL=palabra_toList(palabra)
+            image=f"/static/images/monito-{conteo}.png"
+            letras=[{'letra':x, 'id_letra':x}for x in abc]
+            listado=[(d['letra'],d['id_letra']) for d in letras]
+            
+        
         return render_template('index.html', imagen=image, abecedario=abc, lista_abc=listado, lista_pal=palabraL)
         
 
