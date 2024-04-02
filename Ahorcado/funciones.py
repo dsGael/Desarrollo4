@@ -12,7 +12,13 @@ def palabra_toList(palabra:str)-> list:
     lista=[{letra:"_"} for letra in palabra]
     return lista
 
-
+def ganador(list_letras:list):
+    for dic in list_letras:
+        for k,v in dic.items():
+            if k==v:
+                return True
+            else:
+                return False
 
 if __name__ == "__main__":
     print(lee_archivo("ahorcado/palabras.txt"))

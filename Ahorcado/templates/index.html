@@ -20,6 +20,15 @@
 
             </div>
             <div>
+                {% if chequeo==True %}
+                    <h3>Ganaste papu</h3>
+                {% elif chequeo==False and conteo==6 %}
+                   
+                    <h3>Perdiste papu</h3>
+                {% endif %}
+
+            </div>
+            <div>
                 <form action="{{request.base_url}}" method="post">
                     <h3>Letra:</h3> <br>
                     {% from "dropdown.html" import dropdown %}
