@@ -17,11 +17,13 @@ def index():
     global lista_dict
     global abc
     global fin
+    global letras
 
     if request.method == 'GET':
         fin=False
         image = f"/static/images/monito-{conteo}.png"
         string_abc = "".join(letras)
+        letras = [ x.lower() for x in abc]
         lista_letras = [ {'letra':x, 'id_letra':x} for x in string_abc]
         listado = [(d['letra'],d['id_letra']) for d in lista_letras]
         return render_template("index.html", imagen=image, lista_abc=listado, abcedario=string_abc, lista_pal=lista_dict, fin_juego=fin)
@@ -50,7 +52,7 @@ def index():
         listado = [(d['letra'],d['id_letra']) for d in lista_letras]
         return render_template("index.html", imagen=image, abcedario=string_abc,lista_abc=listado,lista_pal=lista_dict, fin_juego=fin)
 
-@app.route('/', methods=['GET'])
+@app.route('/nuevo_juego', methods=['GET'])
 def nuevo_juego():
     
     global conteo

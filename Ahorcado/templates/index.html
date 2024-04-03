@@ -4,32 +4,25 @@
         <link rel="stylesheet" href="/static/css/estilo.css">
     </head>
     <body>
-        <div>
-            <div>
-                {{abecedario}}
+        <div class="columna">
+            <h1>Juego Ahorcado</h1>
+            <div class="renglon" >
+                {{abcedario}}
             </div>
-            <div>
+            <div class="renglon">
                 <img src="{{imagen}}" alt="Ahorcado" />
                 
             </div>
-            <div>
-                {%- for val in lista_pal %}
-                    {%-for keys in val %}
+            <div class="renglon">
+                <div class="letras">{%- for val in lista_pal %}
+                   {%-for keys in val %}
                         {{val[keys]}}
                     {%-endfor%}
-                {%- endfor %}
+                {%- endfor %}</div>
 
             </div>
-            <div>
-                {% if chequeo==True %}
-                    <h3>Ganaste papu</h3>
-                {% elif chequeo==False and conteo==6 %}
-                   
-                    <h3>Perdiste papu</h3>
-                {% endif %}
-
-            </div>
-            <div>
+           
+            <div class="renglon">
                 <form action="{{request.base_url}}" method="post">
                     <h3>Letra:</h3> <br>
                     {% from "dropdown.html" import dropdown %}
@@ -37,7 +30,7 @@
                     {% if not fin_juego %}
                     <button type="submit">Enviar</button>
                     {% else %}
-                    <div> <a href="/" type="submit" >Nuevo Juego</a></div>
+                    <div> <a class="reset" href="/nuevo_juego" >Nuevo Juego</a></div>
                     {% endif %}
                     
                 </form>
