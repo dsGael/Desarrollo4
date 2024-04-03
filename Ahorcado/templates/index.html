@@ -24,19 +24,19 @@
            
             <div class="renglon">
                 <form action="{{request.base_url}}" method="post">
-                    <h3>Letra:</h3> <br>
+                    <h3>Letra:</h3> 
                     {% from "dropdown.html" import dropdown %}
                     {{ dropdown('valor', lista_abc) }}
                     {% if not fin_juego %}
                     <button type="submit">Enviar</button>
                     {% else %}
-                    <div> <a class="reset" href="/nuevo_juego" >Nuevo Juego</a></div>
+                    <div> 
+                        <a class="reset" href="/nuevo_juego" >Nuevo Juego</a>
+                    </div>
                     {% endif %}
                     
                 </form>
-
-
-        </div>
+            </div>
         
     </body>
 
