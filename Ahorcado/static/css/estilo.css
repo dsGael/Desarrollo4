@@ -1,0 +1,76 @@
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .columna {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+  }
+
+  .letras {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 30px;
+    letter-spacing: 6px;
+    word-spacing: 2px;
+    color: #393939;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+    }
+  
+  .titulo {
+      font-family: Georgia, serif;
+    font-size: 23px;
+    letter-spacing: 1.6px;
+    word-spacing: 2px;
+    color: #c74804;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+  }
+
+  .abc {
+    font-family: "Rockwell", Monaco, monospace;
+   font-size: 21px;
+   letter-spacing: 3px;
+   word-spacing: 2px;
+   color: #258312;
+   font-weight: 400;
+   text-decoration: none;
+   font-style: normal;
+   font-variant: normal;
+   text-transform: uppercase; 
+   }
+   
+  .renglon {margin: 0 -5px;
+            align-items: center;
+            text-align: center;
+            background-color:#C0C0C0;}
+  .renglon_titulo {
+    margin: 0 -5px;
+    padding-top: 20px;
+    border-bottom: 2px solid #1C6EA4;
+    background-color:#C0C0C0;
+  }
+
+.boton {
+    background: #444546;
+    color: rgb(255, 255, 255); font-size: 15px; line-height: 15px; padding: 8px; border-radius: 0px;
+    font-family: "Lucida Console", Monaco, monospace; font-weight: 400; text-decoration: none; 
+    font-style: normal; font-variant: normal; text-transform: uppercase;   
+    border-top: none; border-right: none; border-bottom: 2px solid rgb(28, 110, 164); 
+    border-left: none; border-image: initial; display: inline-block;}
+    .boton:hover {
+    background: #1C6EA4; }
+    .boton:active {
+    background: #144E75; }
+

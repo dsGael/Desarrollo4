@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Ahorcado</title>
+        <link rel="stylesheet" href="/static/css/estilo.css">
     </head>
     <body>
         <div>
@@ -33,9 +34,17 @@
                     <h3>Letra:</h3> <br>
                     {% from "dropdown.html" import dropdown %}
                     {{ dropdown('valor', lista_abc) }}
+                    {% if not fin_juego %}
                     <button type="submit">Enviar</button>
+                    {% else %}
+                    <div> <a href="/" type="submit" >Nuevo Juego</a></div>
+                    {% endif %}
+                    
                 </form>
+
+
         </div>
+        
     </body>
 
 </html>
