@@ -79,31 +79,51 @@ def guardar_json(lista: list[Revista], archivo:str):
         
         for revista in lista:
             file.write(repr(revista)+'\n')
+    print(f'Archivo {archivo} guardado')
 
 
-
+def revistas_mayores(lista: list[Revista], valor:float)->list:
+    '''
+    Return the list of the revistas with a sjr greater than the value
+    '''
+    lista_mayores=[]
+    for revista in lista:
+        if revista.h_index>valor:
+            lista_mayores.append(revista)
+    return lista_mayores
 
 
 def main():
     parser = argparse.ArgumentParser(description='Procesa archivos csv y genera catálogo' )
     parser.add_argument('h_index',type=str,help='index h para filtrar revistas' )
     parser.add_argument('json',type=str,help='json nombre' )
+    parser.add_argument('mayor_menor',type=str,help='mayor o menor' )
 
 
     lista=lee_archivo('Examen2/urls.txt')
+    lista_revT=[]
+    #lee todas las listas
     for i in range(len(lista)):
         pagina=scrap(lista[i])
         soup=BeautifulSoup(pagina.content,'html.parser')
         tabla=find_table(soup)
-        lista=get_info(tabla)
-        print(lista)
+        lista_rev=get_info(tabla)
         h_index=parser.parse_args().h_index
-        revistas=revistas_menores(lista,int(h_index))
-        print("REVISTAS MENORES AL INDEX "+h_index)
+        mayor_menor=parser.parse_args().mayor_menor
         name_json=parser.parse_args().json
         name_json=name_json+'.json'
+        if mayor_menor=='mayor':
+            revistas=revistas_mayores(lista_rev,int(h_index))
+            print("REVISTAS MAYORES AL INDEX "+h_index)
+        elif mayor_menor=='menor':
+            revistas=revistas_menores(lista_rev,int(h_index))
+            print("REVISTAS MENORES AL INDEX "+h_index)
+       
         print(revistas)
-        guardar_json(lista, name_json)
+        lista_revT+=lista_rev
+
+    
+    guardar_json(lista_revT, name_json)
 
 if __name__ == '__main__':
     
