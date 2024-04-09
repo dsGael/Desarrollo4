@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-e">
+    <title>{% block title %}{% endblock title %}</title>
+    <style></style>
+    {% endblock head %}
+</head>
+<body class="bloque">
+    <div>
+    <div><a href="/"></a>Index</div>
+    <div><a href="/generos">Genero</a></div>
+    <div><a href="/anios">Años</a></div>
+    <div><a href="/alfabetico"Alfabetico></a></div>
+    </div>
+    {% block body %}
+    {% endblock body %}
+</body>
+<footer>
+    {% block footer %}
+    <div>CINEMOVIE &copy; 2024 Todos los derechos</div>
+    {% endblock footer %}</footer>
+</html>
