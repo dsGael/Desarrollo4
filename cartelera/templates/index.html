@@ -9,8 +9,8 @@
     <h2>Las proximas películas a ver</h2>
     <div>
         {% for pelicula in lista  %}
-            <div>
-            <a href="/pelicula/{{pelicula['id']}}">
+            <div >
+            <a class="liga" href="/pelicula/{{pelicula['id']}}">
             <img src="{{ pelicula['url_poster'] }}" width="150" alt="poster de {{pelicula['titulo']}}">
             {{ pelicula['titulo'] }}
             </a>

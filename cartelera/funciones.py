@@ -14,7 +14,7 @@ def peliculas_mas_recientes(lista_peliculas:list) -> list:
     """
     Regresa una lista con las peliculas más recientes
     """
-    lista = []
+    
     hoy=datetime.now()
     for pelicula in lista_peliculas:
         estreno=pelicula['fecha_estreno']
@@ -25,11 +25,19 @@ def peliculas_mas_recientes(lista_peliculas:list) -> list:
     sub_lista=lista_peliculas[:5]
     return sub_lista
 
-    
+def crea_diccionario_peliculas(lista_peliculas:list)->dict:
+    d={}
+    for pelicula in lista_peliculas:
+       k= pelicula['id']
+       d[k]=pelicula
+    return d
+
 
 
 if __name__=="__main__":
     lista = carga_csv('cartelera/cartelera_2024.csv')
-    recientes=peliculas_mas_recientes(lista)
-    for pelicula in recientes:
-        print(pelicula['titulo'],pelicula['fecha_estreno'],pelicula['dias_desde_estreno'])
+    #recientes=peliculas_mas_recientes(lista)
+  #  for pelicula in recientes:
+   #     print(pelicula['titulo'],pelicula['fecha_estreno'],pelicula['dias_desde_estreno'])
+    diccionario=crea_diccionario_peliculas(lista)
+    print(diccionario['Dune2'])
