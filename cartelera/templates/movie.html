@@ -1,0 +1,19 @@
+{%extends "base.html"%}
+{%block title%}{{movie['titulo']}}{%endblock title%}
+{%block head%}
+{{super}}
+{%endblock head%}
+{%block body%}
+<div class="card" style="width: 18rem;">
+    <div>
+        <img src="{{movie['url_poster']}}" width="150" >
+    </div>
+    <div class="card-body">
+        <h2 class="card-title">{{movie['titulo']}}</h2>
+        <h5 class="card-subtitle mb-2 text-muted">Estreno: {{movie['fecha_estreno']}}</h5>
+        <h5 class="card-subtitle">Genero: {{movie['genero']}}</h5>
+        <p class="card-text">{{movie['sinopsis']}}</p>
+        
+    </div>
+</div>
+{%endblock body%}
