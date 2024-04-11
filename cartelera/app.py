@@ -8,7 +8,7 @@ cartelera=carga_csv('cartelera/cartelera_2024.csv')
 def index():
     global cartelera
     lista_peliculas = peliculas_mas_recientes(cartelera)
-    return render_template('index.html', lista=lista_peliculas)
+    return render_template('indice.html', lista=lista_peliculas)
 
 @app.route('/generos')
 def generos():
