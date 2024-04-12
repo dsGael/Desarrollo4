@@ -1,104 +1,101 @@
 h1 {color:#38598b;
-    font-family: Georgia, serif;
-    font-size: 24px;
-    letter-spacing: 0.4px;
-    word-spacing: 0px;
-    font-weight: 700;
-    text-decoration: none solid rgb(68, 68, 68);
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;}
-h2 {color:#3f3dafd7;
-    font-family: Georgia, serif;
-    font-size: 18px;
-    letter-spacing: 0.4px;
-    word-spacing: 0px;
-    font-weight: 700;
-    text-decoration: none solid rgb(68, 68, 68);
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;}
-
-h5 {
-    color:#37aaaa;
-    font-family: Georgia, serif;
-    font-size: 14px;
-    letter-spacing: 0.4px;
-    word-spacing: 2px;
-    font-weight: 700;
-    text-decoration: none solid rgb(68, 68, 68);
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-}
-
-p {color:#000000;
-    font-family: Georgia, serif;
-    font-size: 11px;
-    letter-spacing: 0.7px;
-    word-spacing: 0px;
-    font-weight: 700;
-    text-decoration: none solid rgb(88, 83, 83);
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;}
-    
+            font-family: Georgia, serif;
+            font-size: 24px;
+            letter-spacing: 0.4px;
+            word-spacing: 0px;
+            font-weight: 700;
+            text-decoration: none solid rgb(68, 68, 68);
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;}
+h2 {color:#2e4a74;
+            font-family: Georgia, serif;
+            font-size: 18px;
+            letter-spacing: 0.4px;
+            word-spacing: 0px;
+            font-weight: 700;
+            text-decoration: none solid rgb(68, 68, 68);
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;}
+h5 {color:#072858;
+                font-family: Georgia, serif;
+                font-size: 12px;
+                letter-spacing: 0.4px;
+                word-spacing: 0px;
+                font-weight: 700;
+                text-decoration: none solid rgb(68, 68, 68);
+                font-style: normal;
+                font-variant: normal;
+                text-transform: none;}
+h6 {color:#6c4904;
+                    font-family: Georgia, serif;
+                    font-size: 12px;
+                    letter-spacing: 0.4px;
+                    word-spacing: 0px;
+                    font-weight: 700;
+                    text-decoration: none solid rgb(68, 68, 68);
+                    font-style: normal;
+                    font-variant: normal;
+                    text-transform: none;}
 body {color:#2e4a74;
-    font-family: Georgia, serif;
-    font-size: 14px;
-}
-
-.fecha {
-    color: #113f67;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 18px;
-    letter-spacing: 0.4px;
-    word-spacing: 0px;
-    font-weight: 700;
-    text-decoration: none solid rgb(68, 68, 68);
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    }
-
+            font-family: Georgia, serif;
+            font-size: 14px;
+        }
+.fecha {color: #113f67;
+                font-family: "Comic Sans MS", cursive, sans-serif;
+                font-size: 18px;
+                letter-spacing: 0.4px;
+                word-spacing: 0px;
+                font-weight: 700;
+                text-decoration: none solid rgb(68, 68, 68);
+                font-style: normal;
+                font-variant: normal;
+                text-transform: none;}
 .bloque {max-width: fit-content;
-         align-content: center;
-         background: #e7eaf6;
+                 align-content: center;
+                 background: #e7eaf6;
+}
+.titulo {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size:15px;
+    font-style: bold;
+    color:#727ed7;
 }
 .sinopsis {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size:13 px;
-    color:#000000;
-}
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size:13px;
+            color:#a2a8d3;
+        }
 .liga {
-        font-family: Georgia, serif;
-        font-size: 15px;
-        letter-spacing: 0.4px;
-        word-spacing: 0px;
-        color: #38598b;
-        font-weight: 400;
-        text-decoration: none solid rgb(68, 68, 68);
-        font-style: italic;
-        font-variant: normal;
-        text-transform: none;
-}
+                font-family: Georgia, serif;
+                font-size: 15px;
+                letter-spacing: 0.4px;
+                word-spacing: 0px;
+                color: #38598b;
+                font-weight: 400;
+                text-decoration: none solid rgb(68, 68, 68);
+                font-style: italic;
+                font-variant: normal;
+                text-transform: none;
+        }
 .liga:hover {
-        color: #113f67;
-        text-decoration:   underline;
+                color: #113f67;
+                text-decoration:   underline;
 }
 .liga_pie {
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 11px;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-    color: #00204a;
-    font-weight: 700;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;            
+            font-family: "Lucida Console", Monaco, monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #00204a;
+            font-weight: 700;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;            
 }
 .liga_pie:hover {
-        color: #113f67;
-        text-decoration:   underline;
+                color: #113f67;
+                text-decoration:   underline;
 }

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Cartelera de CINEMOVIE{% endblock %}
+{% block head %}
+{% endblock %}
+{% block body %}
+<div>
+    <h1>Cartelera de CINEMOVIE</h1>
+    <h2>Las próximas películas a ver</h2>
+    <h3>Ordenadas por género</h3>
+    <table class="table table-striped">
+        <thead>
+          <th>Genero</th>
+        </thead>
+        <tbody>
+          {% for genero,lista_peliculas in dicc_generos.items() %}
+          <tr>
+            <td>  
+               <a href="/genero/{{genero}}" class="link-secondary">{{genero}}</a>
+              
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">
+              <table class="table mb-0">
+                <thead>
+                    <th>Fecha de Estreno</th>
+                    <th>Titulo</th>
+                    <th>Poster</th>
+                </thead>
+                <tbody>
+                  
+                  {% for pelicula in lista_peliculas %}
+                  <tr>
+                    <td>{{pelicula['fecha_estreno']}}</td>
+                    <td><a href="/pelicula/{{pelicula['id']}}" class="link-secondary">{{pelicula['titulo']}}</a></td>
+                    <td>
+                      <a href="/pelicula/{{pelicula['id']}}" class="link-secondary">
+                      <img src="{{pelicula['url_poster']}}" style="width:100px;">
+                      </a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}
