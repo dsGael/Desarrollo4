@@ -56,6 +56,29 @@ def crea_diccionario_genero(lista_peliculas:list)->dict:
     d = {k: v for k, v in sorted(d.items(), key=lambda item: item[0])}
     return d
 
+def crea_diccionario_años(lista_peliculas:list)->dict:
+    d = {}
+    for pelicula in lista_peliculas:
+        año= pelicula["fecha_estreno"].split("/")[0]
+        año = año.strip()
+        if año in d:
+            d[año].append(pelicula)
+        else:
+            d[año] = [pelicula]
+    d = {k: v for k, v in sorted(d.items(), key=lambda item: item[0])}
+    return d
+
+def crea_diccionario_alfabetico(lista_peliculas:list)->dict:
+    d = {}
+    for pelicula in lista_peliculas:
+        letra = pelicula["titulo"][0].upper()
+        if letra in d:
+            d[letra].append(pelicula)
+        else:
+            d[letra] = [pelicula]
+    d = {k: v for k, v in sorted(d.items(), key=lambda item: item[0])}
+    return d
+
 if __name__ == "__main__":
     lista =carga_csv("cartelera/cartelera_2024.csv")
     #lista =carga_csv("cartelera_estrenos.csv")

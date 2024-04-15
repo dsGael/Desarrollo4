@@ -5,11 +5,16 @@
 {% endblock %}
 {% block body %}
 <div>
-    <h1>Cartelera de CINEMOVIE</h1>
-    <h2>Las próximas películas a ver</h2>
+    <div class="d-flex justify-content-center align-items-center flex-column">
+        <h1>Cartelera de CINEMOVIE</h1>
+        <h2>Las próximas películas a ver</h2>
+        <br>
+    </div>
+    <div class="d-flex justify-content-center align-items-end">
     <div class="card" style="width: 18rem;">
         <div style="width: 60rem;">
-            <div id="CarouselCaptions" class="carousel slide" data-bs-ride="carousel" style="width:30%;height:30%;">
+            
+            <div id="CarouselCaptions" class="carousel slide" data-bs-ride="carousel" style="width:32%;height:30%;">
                 <div class="carousel-indicators">
                     {% for pelicula in lista %}
                     {% if loop.index0== 0 %}
@@ -25,27 +30,28 @@
                     {% for pelicula in lista %}
                     {% if loop.index== 1 %}
                     <div class="carousel-item active">
-                        <img src="{{pelicula['url_poster']}}" style="width:320px;height:280px">
-                        <div class="carousel-caption d-none d-md-block">
-                            <a href="/pelicula/{{pelicula['id']}}" class="link-secondary">
-                                <h5>{{pelicula['titulo']}}</h5></a>
+                        <img src="{{pelicula['url_poster']}}"  style="width: 20rem;;height:30rem">
+                        <div class="carousel-caption d-none d-md-grid">
+                            <a href="/pelicula/{{pelicula['id']}}" class="link-light" style="text-decoration:none;">
+                                <h5 style="background-color:rgb(100, 100, 100)">{{pelicula['titulo']}}</h5>
+                            </a>
                         </div>
                     </div>
                     {% else %}
                     <div class="carousel-item">
-                        <img src="{{pelicula['url_poster']}}" style="width:320px;height:280px">
-                        <div class="carousel-caption d-none d-md-block">
-                            <a href="/pelicula/{{pelicula['id']}}" class="link-secondary">
-                            <h5>{{pelicula['titulo']}}</h5></a>
+                        <img src="{{pelicula['url_poster']}}"  style="width:20rem;height:30rem;">
+                        <div class="carousel-caption d-inline-flex d-md-block" >
+                            <a href="/pelicula/{{pelicula['id']}}" class="link-light"  style="text-decoration: none;">
+                            <h5  style="background-color:rgb(100, 100, 100);">{{pelicula['titulo']}}</h5>
+                            </a>
                         </div>
                     </div>
                     {% endif %}
                     {% endfor %}
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#CarouselCaptions"
-                    data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#CarouselCaptions" data-bs-slide="prev" >
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                    <span class="visually-hidden-focusable">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#CarouselCaptions"
                     data-bs-slide="next">
@@ -54,6 +60,7 @@
                 </button>
             </div>
         </div>
+    </div>
     </div>
 </div>
 {% endblock %}

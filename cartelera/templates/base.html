@@ -14,9 +14,11 @@
     </head>
     <body >
         <div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark " style=" background-color: rgb(33, 20, 136);">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">CINEMOVIE</a>
+                  <a class="navbar-brand" href="/" >
+                    <img src="https://media.discordapp.net/attachments/690991736532762665/1229264157082255431/camara-de-cine-antigua.png?ex=662f0c75&is=661c9775&hm=7b3370d89f43f534455c026b36039599bc9ad3435bcc90a952c4c88f33d154b2&=&format=webp&quality=lossless" width="70px" >
+                  </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -32,23 +34,19 @@
                             <a class="nav-link" href="/anios">Años</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/alfabetico">Alfabético</a>
+                            <a class="nav-link" href="/letras">Alfabético</a>
                         </li>
                     </ul>
                     </div>
                 </div>  
             </nav>
-<!--            <div><a href="/" class="liga">Inicio</a></div>
-            <div><a href="/generos" class="liga">Géneros</a></div>
-            <div><a href="/anios" class="liga">Años</a></div>
-            <div><a href="/alfabetico" class="liga">Alfabético</a></div> -->
         </div>
         {% block body %}
         {% endblock %}
     </body>
     <footer>
         {% block footer %}
-        <div>CINEMOVIE (C) 2024 Todos los derechos</div>
+        <div class="d-flex justify-content-center align-content-center " style="margin-top:5rem ; font-size: 18px; font-style: oblique;">CINEMOVIE (C) 2024 Todos los derechos</div>
         {% endblock %}
     </footer>
 </html>
