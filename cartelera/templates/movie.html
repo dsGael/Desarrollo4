@@ -4,16 +4,16 @@
 {% endblock %}
 {% block body %}
 <div class="d-flex justify-content-center ">
-<div class="card " style="width: 18rem;">
-    
-        <img class="card-img-top" src="{{movie['url_poster']}}" width="150">
-    
-    <div class="card-body ">
-        <h5 class="card-title">{{ movie['titulo']}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Estreno: {{ movie['fecha_estreno']}}</h6>
-        <h6 class="card-subtitle">Géneros: {{ movie['genero']}}</h6>
-        <p  class="card-text">{{movie['sinopsis']}}</p>
+    <div class="card " style="width: 18rem;">
+        
+            <img class="card-img-top" src="{{movie['url_poster']}}" width="150">
+        
+        <div class="card-body ">
+            <h5 class="card-title">{{ movie['titulo']}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Estreno: {{ movie['fecha_estreno']}}</h6>
+            <h6 class="card-subtitle">Géneros: {{ movie['genero']}}</h6>
+            <p  class="card-text">{{movie['sinopsis']}}</p>
+        </div>
     </div>
-</div>
 </div>
 {% endblock %}
